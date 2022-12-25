@@ -28,7 +28,7 @@ table th {
 }
 .search {
   width: 300px;
-  margin-left: 450px;
+  margin-left: auto;
 }
 
 @media screen and (max-width: 600px) {

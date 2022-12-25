@@ -8,9 +8,11 @@ const Create = () => {
     description: "",
     status: "",
     created_at: "",
+    created_by: "",
   });
 
   const postData = async (e) => {
+    e.preventDefault();
     let response = await axios.post(
       "https://product-fhqo.onrender.com/products",
       formData
@@ -28,6 +30,7 @@ const Create = () => {
       description: "",
       status: "",
       created_at: "",
+      created_bt: "",
     }));
     console.log(setFormData);
   };
@@ -46,17 +49,23 @@ const Create = () => {
             }
           />
         </label>
+
         <label>
           Category Name:
-          <input
-            type="text"
+          <select
             name="category_name"
+            id="category_name"
             value={formData.category_name}
             onChange={(e) =>
               setFormData((pre) => ({ ...pre, category_name: e.target.value }))
             }
-          />
+          >
+            <option value="furniture">Furniture</option>
+            <option value="electronic">Electronic</option>
+            <option value="dairy">Dairy</option>
+          </select>
         </label>
+
         <label>
           Description:
           <input
@@ -68,14 +77,31 @@ const Create = () => {
             }
           />
         </label>
+
         <label>
           Status:
-          <input
-            type="text"
+          <select
             name="status"
+            id="status"
             value={formData.status}
             onChange={(e) =>
               setFormData((pre) => ({ ...pre, status: e.target.value }))
+            }
+          >
+            <option value="in_stock">In Stock</option>
+            <option value="limited_available">Limited Available</option>
+            <option value="out_off_stock">Out Off Stock</option>
+          </select>
+        </label>
+
+        <label>
+          Created By:
+          <input
+            type="date"
+            name="created_by"
+            value={formData.created_by}
+            onChange={(e) =>
+              setFormData((pre) => ({ ...pre, created_by: e.target.value }))
             }
           />
         </label>
@@ -95,5 +121,4 @@ const Create = () => {
     </div>
   );
 };
-
 export default Create;
