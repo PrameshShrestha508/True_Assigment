@@ -25,33 +25,35 @@ const Read = () => {
           onChange={(e) => filterNames(e)}
         />
       </div>
-      <table id="customers">
-        <thead>
-          <tr>
-            <th>Product Name</th>
-            <th>Category Name</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Created At</th>
-          </tr>
-        </thead>
-        <tbody>
-          {APIData &&
-            APIData.map((data) => {
-              return (
-                <tr>
-                  <>
-                    <td>{data.product_name}</td>
-                    <td>{data.category_name}</td>
-                    <td>{data.description}</td>
-                    <td>{data.status}</td>
-                    <td>{new Date(data.created_at).toDateString()}</td>
-                  </>
-                </tr>
-              );
-            })}
-        </tbody>
-      </table>
+      <div className="table">
+        <table id="customers">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Category Name</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Created At</th>
+            </tr>
+          </thead>
+          <tbody>
+            {APIData &&
+              APIData.map((data) => {
+                return (
+                  <tr>
+                    <>
+                      <td>{data.product_name}</td>
+                      <td>{data.category_name}</td>
+                      <td>{data.description}</td>
+                      <td>{data.status}</td>
+                      <td>{new Date(data.created_at).toDateString()}</td>
+                    </>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
