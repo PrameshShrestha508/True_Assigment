@@ -1,5 +1,5 @@
 import React from "react";
-import "./Layout.css";
+import "../style/layout.css";
 import { Link } from "react-router-dom";
 import Read from "./read";
 const Layout = () => {

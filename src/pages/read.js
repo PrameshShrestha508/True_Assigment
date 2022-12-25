@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./read.css";
+import "../style/read.css";
 import axios from "axios";
 const Read = () => {
   const [APIData, setAPIData] = useState([]);
