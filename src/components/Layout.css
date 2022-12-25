@@ -1,0 +1,19 @@
+nav ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+nav ul li button {
+  background-color: #008cba; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
